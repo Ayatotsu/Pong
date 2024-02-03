@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float boundY; //y axis movement
 
     public Rigidbody2D playerPanel; //reference to the rb2d component
+    public Vector3 startPosition;
 
     public int wcPlayer; //identifies the player 1 and player 2
 
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerPanel = GetComponent<Rigidbody2D>(); //automatically refereces the component of the object
+        startPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -70,4 +72,11 @@ public class PlayerController : MonoBehaviour
         }
         transform.position = panelPos;
     }
+    public void Reset()
+    {
+        playerPanel.velocity = Vector2.zero;
+        transform.position = startPosition;
+        Start();
+    }
+
 }

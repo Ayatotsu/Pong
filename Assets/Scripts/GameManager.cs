@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     //variables that holds the score value
     public int p1Score;
     public int p2Score;
+    public GameObject ball;
+    
+    
 
     //this variables will display the score on screen
     //these variables are reference to the ui elements in the game
@@ -40,4 +43,11 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
+    public void ResetPosition()
+    {
+        ball.GetComponent<Ball>().Reset();
+    }
+
+
 }

@@ -6,11 +6,15 @@ public class Ball : MonoBehaviour
 {
     public float speed; //ball's movement speed
     public Rigidbody2D ballRB; //reference to the rb2d component
+    public Vector3 startPosition;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         ballRB = GetComponent<Rigidbody2D>();
+
+        startPosition = transform.position;
         //determnes the initial direction of the ball
         int rnd = Random.Range(0, 2);
         switch (rnd)
@@ -24,6 +28,12 @@ public class Ball : MonoBehaviour
         }
     }
 
+    public void Reset()
+    {
+        ballRB.velocity = Vector2.zero;
+        transform.position = startPosition;
+        Start();
+    }
     private void OnCollisionEnter2D(Collision2D actor)
     {
         if (actor.gameObject.name == "padelPlayer1")
