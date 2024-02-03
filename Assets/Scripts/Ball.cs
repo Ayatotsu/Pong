@@ -15,17 +15,8 @@ public class Ball : MonoBehaviour
         ballRB = GetComponent<Rigidbody2D>();
 
         startPosition = transform.position;
-        //determnes the initial direction of the ball
-        int rnd = Random.Range(0, 2);
-        switch (rnd)
-        {
-            case 1:
-                ballRB.velocity = Vector2.right * speed;
-                break;
-            default:
-                ballRB.velocity = Vector2.left * speed;
-                break;
-        }
+        Launch();
+        
     }
 
     public void Reset()
@@ -34,26 +25,12 @@ public class Ball : MonoBehaviour
         transform.position = startPosition;
         Start();
     }
-    private void OnCollisionEnter2D(Collision2D actor)
+    private void Launch()
     {
-        if (actor.gameObject.name == "padelPlayer1")
-        {
-            float y = calculatePosition(transform.position, actor.transform.position, actor.collider.bounds.size.y);
-            Vector2 direction = new Vector2(1, y).normalized;
-            ballRB.velocity = direction * speed;
-        }
-
-        if (actor.gameObject.name == "padelPlayer2")
-        {
-            float y = calculatePosition(transform.position, actor.transform.position, actor.collider.bounds.size.y);
-            Vector2 direction = new Vector2(-1, y).normalized;
-            ballRB.velocity = direction * speed;
-        }
+        float x = Random.Range(0, 2) == 0 ? -1 : 1;
+        float y = Random.Range(0, 2) == 0 ? -1 : 1;
+        ballRB.velocity = new Vector2(speed * x, speed * y);
     }
+        
 
-    float calculatePosition(Vector2 ballPosition, Vector2 panelPosition, float panelHeight)
-    {
-        float value = (ballPosition.y - panelPosition.y) / panelHeight;
-        return (value);
-    }
 }
