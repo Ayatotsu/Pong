@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
 
         //this is for the bounds limit
         var panelPos = transform.position;
-        //this will check if the obejects goes beyond limit
+        //this will check if the objects goes beyond limit
         if (panelPos.y > boundY)
         {
             panelPos.y = boundY; //overwrites the current position if the current exceeds beyond limit

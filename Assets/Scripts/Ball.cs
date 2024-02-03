@@ -16,7 +16,17 @@ public class Ball : MonoBehaviour
 
         startPosition = transform.position;
         Launch();
-        
+        //determnes the initial direction of the ball
+        int rnd = Random.Range(0, 2);
+        switch (rnd)
+        {
+            case 1:
+                ballRB.velocity = Vector2.right * speed;
+                break;
+            default:
+                ballRB.velocity = Vector2.left * speed;
+                break;
+        }
     }
 
     public void Reset()
@@ -27,10 +37,8 @@ public class Ball : MonoBehaviour
     }
     private void Launch()
     {
-        float x = Random.Range(0, 2) == 0 ? -1 : 1;
         float y = Random.Range(0, 2) == 0 ? -1 : 1;
-        ballRB.velocity = new Vector2(speed * x, speed * y);
+        ballRB.velocity = new Vector2(ballRB.velocity.x, speed * y);
     }
-        
 
 }
