@@ -752,7 +752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d160fa0257b73f43a5521f27cefaa43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 10
   ballRB: {fileID: 0}
   startPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
