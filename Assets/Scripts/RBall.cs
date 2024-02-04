@@ -12,6 +12,8 @@ public class RBall : MonoBehaviour
         ballRB = GetComponent<Rigidbody2D>();
 
         ballRB.velocity = Vector2.left * speed;
+
+        RandomTrajectory();
     }
 
     // Update is called once per frame
@@ -34,5 +36,14 @@ public class RBall : MonoBehaviour
     {
         float value = (ballPosition.y - panelPosition.y) / panelHeight;
         return (value);
+    }
+
+    private void RandomTrajectory()
+    {
+        Vector2 force = Vector2.zero;
+        force.x = Random.Range(-0.5f, 0.5f);
+        force.y = -1;
+
+        ballRB.AddForce(force.normalized * speed);
     }
 }

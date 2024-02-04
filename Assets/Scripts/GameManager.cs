@@ -10,8 +10,11 @@ public class GameManager : MonoBehaviour
     public int p1Score;
     public int p2Score;
     public GameObject ball;
-    
-    
+    public GameObject paddlePlayer1;
+    public GameObject ButtonReset;
+    public GameObject mainMenu;
+
+
 
     //this variables will display the score on screen
     //these variables are reference to the ui elements in the game
@@ -39,6 +42,10 @@ public class GameManager : MonoBehaviour
             if (isThereAnyBricks)
             {
                 txtMessage.text = "You Win";
+                ball.gameObject.SetActive(false);
+                paddlePlayer1.gameObject.SetActive(false);
+                ButtonReset.gameObject.SetActive(true);
+                mainMenu.gameObject.SetActive(true);
             }
         }
 

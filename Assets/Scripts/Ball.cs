@@ -16,6 +16,7 @@ public class Ball : MonoBehaviour
 
         startPosition = transform.position;
         Launch();
+
         
     }
 
@@ -24,7 +25,9 @@ public class Ball : MonoBehaviour
         ballRB.velocity = Vector2.zero;
         transform.position = startPosition;
         Start();
+        
     }
+    
     private void Launch()
     {
         //determnes the initial direction of the ball
@@ -41,5 +44,6 @@ public class Ball : MonoBehaviour
         float y = Random.Range(0, 2) == 0 ? -1 : 1;
         ballRB.velocity = new Vector2(ballRB.velocity.x, speed * y);
     }
+ 
 
 }

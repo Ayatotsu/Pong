@@ -10,4 +10,9 @@ public class ResetButton : MonoBehaviour
     {
         SceneManager.LoadScene(whatScene);
     }
+
+    public void BtnStartGame()
+    {
+        SceneManager.LoadScene(whatScene);
+    }
 }

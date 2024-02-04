@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class GameOverTrigger : MonoBehaviour
 {
+    [SerializeField]
     public GameManager gameManager;
 
     public Text txtMessage;
     public GameObject Ball;
     public GameObject paddlePlayer1;
     public GameObject ButtonReset;
+    public GameObject mainMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,8 @@ public class GameOverTrigger : MonoBehaviour
             Ball.gameObject.SetActive(false);
             paddlePlayer1.gameObject.SetActive(false);
             ButtonReset.gameObject.SetActive(true);
+            mainMenu.gameObject.SetActive(true);
+            
         }
     }
 }
