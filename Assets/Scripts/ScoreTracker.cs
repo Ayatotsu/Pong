@@ -73,8 +73,6 @@ public class ScoreTracker : MonoBehaviour
                         ButtonMainMenu.gameObject.SetActive(true);
                     }
                     break;
-
-
             }
         }
     }
