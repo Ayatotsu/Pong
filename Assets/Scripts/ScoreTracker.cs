@@ -14,6 +14,7 @@ public class ScoreTracker : MonoBehaviour
     public GameObject PlayerWins;
     public GameObject GameOver;
     public GameObject ButtonReset;
+    public GameObject ButtonMainMenu;
     public GameObject Ball;
     public GameObject paddlePlayer1;
     public GameObject paddlePlayer2;
@@ -54,6 +55,7 @@ public class ScoreTracker : MonoBehaviour
                         paddlePlayer1.gameObject.SetActive(false);
                         paddlePlayer2.gameObject.SetActive(false);
                         ButtonReset.gameObject.SetActive(true);
+                        ButtonMainMenu.gameObject.SetActive(true);
 
                     }
                     break;
@@ -68,6 +70,7 @@ public class ScoreTracker : MonoBehaviour
                         paddlePlayer1.gameObject.SetActive(false);
                         paddlePlayer2.gameObject.SetActive(false);
                         ButtonReset.gameObject.SetActive(true);
+                        ButtonMainMenu.gameObject.SetActive(true);
                     }
                     break;
 
