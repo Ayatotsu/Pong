@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public GameObject paddlePlayer1;
     public GameObject ButtonReset;
     public GameObject mainMenu;
+    public GameObject ButtonNextLevel;
+
 
 
 
@@ -41,11 +43,12 @@ public class GameManager : MonoBehaviour
         {
             if (isThereAnyBricks)
             {
-                txtMessage.text = "You Win";
+                txtMessage.text = "Level Completed!!!";
                 ball.gameObject.SetActive(false);
                 paddlePlayer1.gameObject.SetActive(false);
                 ButtonReset.gameObject.SetActive(true);
                 mainMenu.gameObject.SetActive(true);
+                ButtonNextLevel.gameObject.SetActive(true);
             }
         }
 
