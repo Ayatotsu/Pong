@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         }
 
         //this is for ricochet level
-        if (levelName == "Ricochet")
+        if (levelName == "Ricochet1")
         {
             if (isThereAnyBricks)
             {
@@ -52,6 +52,32 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        if (levelName == "Ricochet2")
+        {
+            if (isThereAnyBricks)
+            {
+                txtMessage.text = "Level Completed!!!";
+                ball.gameObject.SetActive(false);
+                paddlePlayer1.gameObject.SetActive(false);
+                ButtonReset.gameObject.SetActive(true);
+                mainMenu.gameObject.SetActive(true);
+                ButtonNextLevel.gameObject.SetActive(true);
+            }
+        }
+
+        if (levelName == "Ricochet3")
+        {
+            if (isThereAnyBricks)
+            {
+                txtMessage.text = "Level Completed!!!";
+                ball.gameObject.SetActive(false);
+                paddlePlayer1.gameObject.SetActive(false);
+                ButtonReset.gameObject.SetActive(true);
+                mainMenu.gameObject.SetActive(true);
+                
+            }
+        }
+
     }
 
     public void ResetPosition()
@@ -59,5 +85,10 @@ public class GameManager : MonoBehaviour
         ball.GetComponent<Ball>().Reset();
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+        Debug.Log("GameQuit");
+    }
 
 }

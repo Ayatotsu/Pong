@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 public class ResetButton : MonoBehaviour
 {
     public string whatScene;
-
-    public GameObject currentLevel;
-    public GameObject buttonNextLevel;
+    public GameObject currentMenu;
+    public GameObject nextMenu;
 
     public void BtnReset()
     {
@@ -19,10 +18,9 @@ public class ResetButton : MonoBehaviour
         SceneManager.LoadScene(whatScene);
         
     }
-
-    public void NextLevel()
+    public void SwitchActive()
     {
-        currentLevel.gameObject.SetActive(false);
-        buttonNextLevel.gameObject.SetActive(true);
+        currentMenu.gameObject.SetActive(false);
+        nextMenu.gameObject.SetActive(true);
     }
 }
